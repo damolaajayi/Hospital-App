@@ -25,7 +25,7 @@ SECRET_KEY = 'i3)rh*%4ofsku+49znmiuar1uau-3jjo0knn(gt5&6#rtam4-3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['damola2018.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['damola29.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
