@@ -27,7 +27,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('davidbeckham')
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['damola2018.herokuapp.com']
+ALLOWED_HOSTS = ['damola2018.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -139,5 +139,5 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, "static"),
         ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
