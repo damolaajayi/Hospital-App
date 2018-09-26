@@ -26,14 +26,14 @@ EMAIL_HOST_PASSWORD = os.environ.get('davidbeckham')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
-ALLOWED_HOSTS = ['damola2018.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['herokuapp.com', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'hospital',
+    'users',
     'patients',
     'patient_input',
     'django.contrib.admin',
@@ -42,10 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'widget_tweaks',
 ]
 
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
+AUTH_USER_MODEL = 'users.DoctorUser'
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -85,7 +91,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'hospital_app',
+        'USER': 'damola',
+        'PASSWORD': 'damola',
+        'HOST': 'localhost',
+        'PORT': '',
+
     }
 }
 
@@ -136,8 +147,8 @@ DATABASES['default'].update(db_from_env)
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static"),
+        os.path.join(BASE_DIR, 'static'),
         ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
