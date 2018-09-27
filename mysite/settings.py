@@ -26,7 +26,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('davidbeckham')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['damola2018.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
